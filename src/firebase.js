@@ -1,7 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { 
+  getAuth, 
+  GoogleAuthProvider, 
+  FacebookAuthProvider, 
+  OAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,4 +30,54 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { app, analytics, auth, db }; 
+// 소셜 로그인 제공자 초기화
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const appleProvider = new OAuthProvider('apple.com');
+
+// 소셜 로그인 함수
+const signInWithGoogle = async () => {
+  try {
+    console.log('Google 로그인 시도...');
+    const result = await signInWithPopup(auth, googleProvider);
+    console.log('Google 로그인 성공:', result.user.uid);
+    return result.user;
+  } catch (error) {
+    console.error('Google 로그인 오류:', error);
+    throw error;
+  }
+};
+
+const signInWithFacebook = async () => {
+  try {
+    console.log('Facebook 로그인 시도...');
+    const result = await signInWithPopup(auth, facebookProvider);
+    console.log('Facebook 로그인 성공:', result.user.uid);
+    return result.user;
+  } catch (error) {
+    console.error('Facebook 로그인 오류:', error);
+    throw error;
+  }
+};
+
+const signInWithApple = async () => {
+  try {
+    console.log('Apple 로그인 시도...');
+    const result = await signInWithPopup(auth, appleProvider);
+    console.log('Apple 로그인 성공:', result.user.uid);
+    return result.user;
+  } catch (error) {
+    console.error('Apple 로그인 오류:', error);
+    throw error;
+  }
+};
+
+export { 
+  app, 
+  analytics, 
+  auth, 
+  db, 
+  signInWithGoogle, 
+  signInWithFacebook, 
+  signInWithApple 
+}; 
