@@ -35,7 +35,7 @@ export default function UserHome() {
               radius="none"
             >
               <h1 className="text-xs font-bold">TANGO-CITY.COM</h1>
-              <div className="flex items-center gap-2">
+              <div className="text-lg flex items-center gap-2">
                 <div className="font-bold">
                   {
                     supportedCountries.find(
@@ -87,9 +87,9 @@ export default function UserHome() {
             radius="full"
             as={Link}
             to="/login"
-            startContent={<ArrowLeftEndOnRectangleIcon className="size-4" />}
+            startContent={<ArrowLeftEndOnRectangleIcon className="size-6" />}
           >
-            <b>LOGIN</b>
+            Login
           </Button>
         )}
       </div>
