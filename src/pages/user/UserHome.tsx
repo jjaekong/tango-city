@@ -28,7 +28,12 @@ export default function UserHome() {
       <div className="p-6 flex items-center justify-between">
         <Dropdown>
           <DropdownTrigger>
-            <div>
+            <Button
+              variant="light"
+              className="flex flex-col gap-0 items-start p-0"
+              disableRipple
+              radius="none"
+            >
               <h1 className="text-xs font-bold">TANGO-CITY.COM</h1>
               <div className="flex items-center gap-2">
                 <div className="font-bold">
@@ -40,7 +45,7 @@ export default function UserHome() {
                 </div>
                 <ChevronDownIcon className="size-4" />
               </div>
-            </div>
+            </Button>
           </DropdownTrigger>
           <DropdownMenu
             items={supportedCountries}
@@ -81,7 +86,7 @@ export default function UserHome() {
             className="bg-gradient-to-tr from-pink-500 to-blue-500 text-white shadow-lg"
             radius="full"
             as={Link}
-            href="/login"
+            to="/login"
             startContent={<ArrowLeftEndOnRectangleIcon className="size-4" />}
           >
             <b>LOGIN</b>
