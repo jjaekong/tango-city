@@ -34,7 +34,7 @@ export default function UserHome() {
               disableRipple
               radius="none"
             >
-              <h1 className="text-xs font-bold tracking-wider">
+              <h1 className="text-xs font-bold tracking-wide">
                 TANGO-CITY.COM
               </h1>
               <div className="flex items-center gap-2">

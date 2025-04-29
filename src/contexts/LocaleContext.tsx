@@ -52,13 +52,16 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
       if (regLanguage.test(storedLanguage)) {
         if (supportedLanguages.includes(storedLanguage)) {
           setLanguage(storedLanguage);
+          document.documentElement.lang = storedLanguage;
         } else {
           setLanguage(defaultLanguage);
           localStorage.setItem("language", defaultLanguage);
+          document.documentElement.lang = defaultLanguage;
         }
       } else {
         setLanguage(defaultLanguage);
         localStorage.setItem("language", defaultLanguage);
+        document.documentElement.lang = defaultLanguage;
       }
     } else {
       const browserLanguage = navigator.language;
@@ -66,9 +69,11 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
       if (supportedLanguages.includes(language)) {
         setLanguage(language);
         localStorage.setItem("language", language);
+        document.documentElement.lang = language;
       } else {
         setLanguage(defaultLanguage);
         localStorage.setItem("language", defaultLanguage);
+        document.documentElement.lang = defaultLanguage;
       }
     }
 
