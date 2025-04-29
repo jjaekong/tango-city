@@ -34,9 +34,11 @@ export default function UserHome() {
               disableRipple
               radius="none"
             >
-              <h1 className="text-xs font-bold">TANGO-CITY.COM</h1>
-              <div className="text-lg flex items-center gap-2">
-                <div className="font-bold">
+              <h1 className="text-xs font-bold tracking-wider">
+                TANGO-CITY.COM
+              </h1>
+              <div className="flex items-center gap-2">
+                <div className="text-base font-bold">
                   {
                     supportedCountries.find(
                       (item) => item.countryCode === country,
@@ -87,9 +89,9 @@ export default function UserHome() {
             radius="full"
             as={Link}
             to="/login"
-            startContent={<ArrowLeftEndOnRectangleIcon className="size-6" />}
+            startContent={<ArrowLeftEndOnRectangleIcon className="size-5" />}
           >
-            Login
+            LOGIN
           </Button>
         )}
       </div>
