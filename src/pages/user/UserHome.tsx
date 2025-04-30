@@ -89,7 +89,7 @@ export default function UserHome() {
             radius="full"
             as={Link}
             to="/login"
-            startContent={<ArrowLeftEndOnRectangleIcon className="size-5" />}
+            startContent={<ArrowLeftEndOnRectangleIcon className="size-4" />}
           >
             LOGIN
           </Button>
